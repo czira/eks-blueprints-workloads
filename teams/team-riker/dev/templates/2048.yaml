@@ -42,13 +42,13 @@ spec:
       shareProcessNamespace: false
       terminationGracePeriodSeconds: 30
       {{ if .Values.spec.karpenterInstanceProfile }}
-      nodeSelector:
-        team: default
-        type: karpenter
-      tolerations:
-        - key: 'karpenter'
-          operator: 'Exists'
-          effect: 'NoSchedule'
+      #nodeSelector:
+      #  team: default
+      #  type: karpenter
+      #tolerations:
+      #  - key: 'karpenter'
+      #    operator: 'Exists'
+      #    effect: 'NoSchedule'
       {{ end }}
       topologySpreadConstraints:
         - maxSkew: 1
